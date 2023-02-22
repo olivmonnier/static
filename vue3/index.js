@@ -33,7 +33,7 @@ function handlePromiseResults(results) {
   return results.map((result) => result.value);
 }
 
-export async function init(scriptNames) {
+export async function init(scriptNames = []) {
   const promises = [];
   const list = new Set(['vue', ...scriptNames])
   for (const scriptName of list) {
