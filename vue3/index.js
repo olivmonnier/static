@@ -34,17 +34,17 @@ function handlePromiseResults(results) {
 }
 
 export async function init(scriptNames = []) {
-  const promises = [];
   const list = new Set(['vue', ...scriptNames])
+  const promise = Promise.resolve();
   for (const scriptName of list) {
-    promises.push(createScript(scriptName))
+    promise.then(createScript(scriptName))
   }
-  const results = await Promise.allSettled(promises)
-  try {
-    handlePromiseResults(results);
-  } catch(err) {
-    for (const error of err.errors) {
-      console.error(error);
-    }
-  }
+  // const results = await Promise.allSettled(promises)
+  // try {
+  //   handlePromiseResults(results);
+  // } catch(err) {
+  //   for (const error of err.errors) {
+  //     console.error(error);
+  //   }
+  // }
 }
