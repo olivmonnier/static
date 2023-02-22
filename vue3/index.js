@@ -35,9 +35,13 @@ function handlePromiseResults(results) {
 
 export async function init(scriptNames = []) {
   const list = new Set(['vue', ...scriptNames])
-  const promise = Promise.resolve();
-  for (const scriptName of list) {
-    promise.then(createScript(scriptName))
+
+  try {
+    for (const scriptName of list) {
+      await createScript(scriptName)
+    }
+  } catch(err) {
+    console.error(error)
   }
   // const results = await Promise.allSettled(promises)
   // try {
