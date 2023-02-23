@@ -20,7 +20,7 @@
 #### With Javascript module:
 ```html
 <div id="app">{{ message }}</div>
-<script src="./index.js?vue@3&vue-router@4&vue-i18n@8"></script>
+<script src="./index.js?vue@3/dist/vue.esm-bundler.js&vue-router@4&vue-i18n@8"></script>
 <script type="module">
   import { createApp } from "vue"
   createApp({
