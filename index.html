@@ -6,16 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script type="importmap">{
-    "imports": {
-      "pinia": "https://unpkg.com/pinia@2.0.32/dist/pinia.esm-browser.js"
-    }
-  }</script>
 </head>
 
 <body>
   <div id="app">{{ message }}</div>
-  <script src="./index.js" data-dependencies="router, i18n"></script>
+  <script src="./index.js?vue@3&vue-router@4&vue-i18n@8"></script>
   <script type="module">
     document.addEventListener('static-ready', () => {
       const { createApp } = Vue
