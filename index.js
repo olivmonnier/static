@@ -18,7 +18,7 @@ function createScript(scriptName) {
 function createImportMap(libraries) {
   const importMaps = {}
   for (let imp of libraries) {
-    importMaps[imp.split('@')[0]] = `${ESM_CDN}/${imp}}`
+    importMaps[imp.split('@')[0]] = `${ESM_CDN}/${imp}`
   }
   const importMap = {
     imports: importMaps,
