@@ -9,19 +9,22 @@
 </head>
 
 <body>
-  <div id="app">{{ message }}</div>
-  <script src="./index.js?vue@3&vue-router@4&vue-i18n@8"></script>
-  <script type="module">
-    document.addEventListener('static-ready', () => {
-      const { createApp } = Vue
-      createApp({
-        data() {
-          return {
-            message: 'Hello Vue!'
-          }
+  <!-- <iframe src="./iframe.html" /> -->
+  <script src="./index.js?js=console.log('foo')"></script>
+  <script src="./index.js?css=body{background-color:red}"></script>
+
+  <script>
+    function textToDataUri(content, mimeType) {
+      return new Promise((resolve, reject) => {
+        const blob = new Blob([content], { type: mimeType })
+        const reader = new FileReader()
+        reader.onload = () => {
+          resolve(reader.result)
         }
-      }).mount('#app')
-    })
+        reader.onerror = reject
+        reader.readAsDataURL(blob)
+      })
+    }
   </script>
 </body>
 
